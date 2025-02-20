@@ -19,6 +19,14 @@ class Coche
     public $color;
     public $modelo;
 
+    // Constructor
+    public function __construct($marca, $color, $modelo)
+    {
+        $this->marca = $marca;
+        $this->color = $color;
+        $this->modelo = $modelo;
+    }
+
     // Métodos
     public function arrancar()
     {
@@ -27,7 +35,7 @@ class Coche
 }
 
 // Creación de un objeto
-// $coche1 = new Coche();
-$coche1->marca = "Audi";
+$coche1 = new Coche("Audi", "Rojo", "A4");
 echo $coche1->marca . "<br>";
 $coche1->arrancar();
+// prueba de docker
