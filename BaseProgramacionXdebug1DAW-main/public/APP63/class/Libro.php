@@ -54,4 +54,17 @@ class Libro
     {
         $this->paginas = $paginas;
     }
+    public function toArray(): array
+    {
+        return [
+            "titulo" => $this->titulo,
+            "autor" => $this->autor,
+            "anyo" => $this->anyo,
+            "paginas" => $this->paginas
+        ];
+    }
+    public static function fromArray(array $data): Libro
+    {
+        return new Libro($data["titulo"], $data["autor"], $data["anyo"], $data["paginas"]);
+    }
 }

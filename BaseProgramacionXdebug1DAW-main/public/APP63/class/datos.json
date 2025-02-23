@@ -1,0 +1,32 @@
+[
+    {
+        "tipo": "libro",
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "anyo": 1967,
+        "paginas": 417
+    },
+    {
+        "tipo": "libro",
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "anyo": 1949,
+        "paginas": 328
+    },
+    {
+        "tipo": "revista",
+        "titulo": "Science",
+        "autor": "AAAS",
+        "anyo": 2023,
+        "paginas": 120,
+        "tematica": "Ciencia"
+    },
+    {
+        "tipo": "revista",
+        "titulo": "Time",
+        "autor": "Time Inc.",
+        "anyo": 2023,
+        "paginas": 80,
+        "tematica": "Noticias"
+    }
+]

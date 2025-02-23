@@ -7,6 +7,42 @@ class Libreria
 {
     private array $libros = [];
     private array $revistas = [];
+    private string $filePath;
+
+    public function __construct()
+    {
+        $this->filePath = __DIR__ . "/datos.json";
+        $this->cargarLibrosYRevistas();
+    }
+
+    public function cargarLibrosYRevistas(): void
+    {
+        //VERIFICAMOS LAS RUTAS POR SI ACASO ERROR
+        $data = null;
+        if (file_exists($this->filePath)) {
+            $data = json_decode(file_get_contents($this->filePath), true);
+        } else {
+        }
+
+        //var_dump($data);
+
+        if ($data != null && is_array($data)) {
+            echo "<h4>Elementos cargados:</h4>";
+            foreach ($data as $array) {
+                if ($array["tipo"] == "libro") {
+                    $this->libros[] = Libro::fromArray($array);
+                    echo  $array["titulo"] . "<br>";
+                } elseif ($array["tipo"] == "revista") {
+                    $this->revistas[] = Revista::fromArray($array);
+                    echo  $array["titulo"] . "<br>";
+                }
+            }
+            echo "<br>";
+
+        } else {
+            echo "No se encontraron datos válidos en el archivo JSON.<br>";
+        }
+    }
 
     public function crearLibro($titulo, $autor, $anyo, $paginas)
     {
@@ -84,7 +120,8 @@ class Libreria
         echo "Revista actualizada correctamente.<br>";
     }
 
-    public function eliminarLibro($index) {
+    public function eliminarLibro($index)
+    {
         if (!isset($this->libros[$index])) {
             echo "Libro no encontrado.<br>";
             return;
@@ -96,7 +133,8 @@ class Libreria
         echo "Libro '$libroBorrado' eliminado correctamente.<br>";
     }
 
-    public function eliminarRevista($index) {
+    public function eliminarRevista($index)
+    {
         if (!isset($this->revistas[$index])) {
             echo "Revista no encontrada.<br>";
             return;
