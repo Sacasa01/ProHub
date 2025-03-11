@@ -17,28 +17,26 @@ class Libreria
 
     public function cargarLibrosYRevistas(): void
     {
-        //VERIFICAMOS LAS RUTAS POR SI ACASO ERROR
         $data = null;
         if (file_exists($this->filePath)) {
             $data = json_decode(file_get_contents($this->filePath), true);
         } else {
+            echo "Archivo JSON no encontrado en: " . $this->filePath . "<br>";
+            return;
         }
-
-        //var_dump($data);
 
         if ($data != null && is_array($data)) {
             echo "<h4>Elementos cargados:</h4>";
             foreach ($data as $array) {
                 if ($array["tipo"] == "libro") {
                     $this->libros[] = Libro::fromArray($array);
-                    echo  $array["titulo"] . "<br>";
+                    echo $array["titulo"] . "<br>";
                 } elseif ($array["tipo"] == "revista") {
                     $this->revistas[] = Revista::fromArray($array);
-                    echo  $array["titulo"] . "<br>";
+                    echo $array["titulo"] . "<br>";
                 }
             }
             echo "<br>";
-
         } else {
             echo "No se encontraron datos válidos en el archivo JSON.<br>";
         }
@@ -65,7 +63,7 @@ class Libreria
 
         echo "<strong>Listado de Libros:</strong><br>";
         foreach ($this->libros as $index => $libro) {
-            echo ($index + 1) . ". Título: " . $libro->getTitulo() .
+            echo "Título: " . $libro->getTitulo() .
                 ", Autor: " . $libro->getAutor() .
                 ", Año: " . $libro->getAnyo() .
                 ", Páginas: " . $libro->getPaginas() . "<br>";
@@ -81,7 +79,7 @@ class Libreria
 
         echo "<strong>Listado de Revistas:</strong><br>";
         foreach ($this->revistas as $index => $revista) {
-            echo ($index + 1) . ". Título: " . $revista->getTitulo() .
+            echo "Título: " . $revista->getTitulo() .
                 ", Autor: " . $revista->getAutor() .
                 ", Año: " . $revista->getAnyo() .
                 ", Temática: " . $revista->getTematica() . "<br>";
