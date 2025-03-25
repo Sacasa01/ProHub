@@ -1,14 +1,62 @@
 [
     {
-        "title": "2",
-        "author": "2",
-        "year": 2,
-        "pages": 2
+        "title": "dad",
+        "author": "daw",
+        "year": 213,
+        "pages": 1331
+    },
+    {
+        "title": "vz",
+        "author": "dasd",
+        "year": 314,
+        "pages": 1324
+    },
+    {
+        "title": "dawd",
+        "author": "awd",
+        "year": 241,
+        "pages": 12341
+    },
+    {
+        "title": "dwad",
+        "author": "wadaw",
+        "year": 213,
+        "pages": 3123
     },
     {
         "title": "SDASD",
         "author": "ASDAD",
         "year": 44,
         "type": "Revista"
+    },
+    {
+        "title": "sad",
+        "author": "adas",
+        "year": 211,
+        "type": "ada"
+    },
+    {
+        "title": "wdwda",
+        "author": "adwda",
+        "year": 21,
+        "type": "Libro"
+    },
+    {
+        "title": "sa",
+        "author": "sa",
+        "year": 12112,
+        "type": "Libro"
+    },
+    {
+        "title": "sas",
+        "author": "sasss",
+        "year": 1990,
+        "type": "Libro"
+    },
+    {
+        "title": "santiagooooooooooooo",
+        "author": "adw",
+        "year": 213,
+        "type": "rerer"
     }
 ]
